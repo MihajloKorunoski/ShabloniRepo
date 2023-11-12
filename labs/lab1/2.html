@@ -14,6 +14,7 @@
             align-items: center;
             height: 100vh;
         }
+
         .container {
             background-color: #ffffff;
             padding: 40px 50px;
@@ -22,49 +23,58 @@
             width: 100%;
             max-width: 450px;
         }
+
         h2 {
             text-align: center;
-            color: #5D647B;
+            color: #5d647b;
             margin-bottom: 40px;
             font-size: 26px;
         }
+
         form {
             display: flex;
             flex-direction: column;
         }
+
         label {
             margin-bottom: 10px;
             font-weight: 600;
-            color: #4A4A4A;
+            color: #4a4a4a;
         }
+
         input[type=text], select {
             padding: 15px;
             margin-bottom: 25px;
-            border: 1px solid #D1D1D1;
+            border: 1px solid #d1d1d1;
             border-radius: 5px;
             font-size: 16px;
             transition: border 0.3s ease-in-out;
         }
+
         input[type=text]:focus, select:focus {
             outline: none;
-            border-color: #7C77B9;
+            border-color: #7c77b9;
         }
+
         .gender {
             display: flex;
             justify-content: start;
             margin-bottom: 20px;
         }
+
         .gender input {
             margin-right: 7px;
         }
+
         .gender label {
             margin-top: 12px;
             margin-right: 30px;
             font-size: 16px;
-            color: #4A4A4A;
+            color: #4a4a4a;
         }
+
         button {
-            background-color: #7C77B9;
+            background-color: #7c77b9;
             color: white;
             padding: 15px 20px;
             border: none;
@@ -73,8 +83,9 @@
             transition: background-color 0.3s;
             font-size: 18px;
         }
+
         button:hover {
-            background-color: #6961A5;
+            background-color: #6961a5;
         }
     </style>
 </head>
@@ -82,7 +93,7 @@
 
 <div class="container">
     <h2>Форма за пријавување на X-Factor</h2>
-    <form action="#">
+    <form id="form" action="#">
         <label for="name">Име</label>
         <input type="text" id="name" name="name">
 
@@ -90,10 +101,10 @@
         <input type="text" id="stageName" name="stageName">
 
         <div class="gender">
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Машки</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Женски</label>
+            <input type="radio" id="male" name="gender" value="Машко">
+            <label for="male">Машко</label>
+            <input type="radio" id="female" name="gender" value="Женско">
+            <label for="female">Женско</label>
         </div>
 
         <label for="genre">Жанр:</label>
@@ -108,9 +119,29 @@
             <option value="other">Other</option>
         </select>
 
-        <button type="submit">Пријави се</button>
+        <button type="submit" onclick="formSubmit()">Пријави се</button>
     </form>
 </div>
+<script>
 
+    function formSubmit() {
+        let form = document.forms['form']
+
+        let name = form['name'].value.trim()
+        let stageName = form['stageName'].value.trim()
+        let gender = form.querySelector('input[name="gender"]:checked')
+        let genreSelect = document.getElementById('genre')
+        let genreText = genreSelect.options[genreSelect.selectedIndex].text
+
+        if (name === "" || stageName === "" || !gender) {
+            alert('Сите полиња се задолжителни')
+            return
+        }
+
+        gender = gender ? gender.value : ''
+
+        alert(`${name} ${stageName}, ${gender}, ${genreText} - Успешно се пријавивте`)
+    }
+</script>
 </body>
 </html>
