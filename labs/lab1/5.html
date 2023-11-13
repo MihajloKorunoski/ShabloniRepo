@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задача 5</title>
+    <script src="jquery-3.7.1.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
-        .font-size-box{
+
+        .font-size-box {
             width: 500px;
             background-color: #00ffff;
             padding: 20px 40px;
@@ -16,10 +18,18 @@
             font-size: 50px;
             font-style: italic;
         }
-        .buttons{
+
+        .buttons {
             font-size: 20px;
             padding: 10px 32px;
             border-radius: 10px;
+        }
+
+        .header h1{
+            font-size: 34px;
+        }
+        .content p{
+            font-size: 16px;
         }
     </style>
 </head>
@@ -32,7 +42,7 @@
         <button id="decrease-size" class="buttons">Намали</button>
     </div>
 </div>
-<div id="header" class="header">
+<div class="header">
     <h1>How to connect to the Internet</h1>
 </div>
 
@@ -47,10 +57,37 @@
 </div>
 
 <script>
-    $(document).ready(function (){
-        $('#default-size').click(function (){
-            $('#header h1').css('font-size','250px')
+    $(document).ready(function () {
+
+        let headerH1 = $('.header h1')
+        let contentP = $('.content p')
+
+        $('#default-size').click(function () {
+            headerH1.css('font-size', '34px')
+            contentP.css('font-size', '16px')
         })
+
+        $('#increase-size').click(function () {
+            changeFontSize(headerH1,1.5)
+            changeFontSize(contentP,1.5)
+        })
+
+        $('#decrease-size').click(function () {
+            changeFontSize(headerH1,2/3)
+            changeFontSize(contentP,2/3)
+        })
+
+        function changeFontSize(element, scaleFactor){
+            let currentSize = parseFloat(element.css('font-size'))
+            let newSize = currentSize * scaleFactor
+            animateFontSize(element, newSize + 'px')
+        }
+
+        function animateFontSize(element, size){
+            element.animate({
+                'font-size' : size
+            }, 300)
+        }
     })
 </script>
 </body>
