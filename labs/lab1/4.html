@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 4</title>
+    <script src="jquery-3.7.1.js"></script>
+    <style>
+        .urlBold {
+            font-weight: bold;
+            color: #0000FF;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li>Logo-Photo</li>
+    <ol type="I">
+        <li>url - thumbnail: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+        <li>url-icon: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+        <li>url-default: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+    </ol>
+    <li>Header-Photo</li>
+    <ol type="I">
+        <li>url - thumbnail: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+        <li>url-icon: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+        <li>url-default: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+    </ol>
+    <li>Footer-Photo</li>
+    <ol type="I">
+        <li>url - thumbnail: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+        <li>url-icon: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+        <li>url-default: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+    </ol>
+    <li>Main-Photo</li>
+    <ol type="I">
+        <li>url - thumbnail: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+        <li>ur-icon: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+        <li>url-default: www.sth.com/GAVassdfSJFKBAFsadfdsg</li>
+    </ol>
+</ul>
+<button id="change">Change</button>
+<script>
+    $(document).ready(function () {
+        $('#list').children().addClass('urlBold');
+
+        $('#change').click(function () {
+            $('#list ol').toggleClass('urlBold');
+        });
+    });
+</script>
+</body>
+</html>

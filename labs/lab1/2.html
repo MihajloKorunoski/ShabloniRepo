@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 2</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f7;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #5d647b;
+            margin-bottom: 40px;
+            font-size: 26px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #4a4a4a;
+        }
+
+        input[type=text], select {
+            padding: 15px;
+            margin-bottom: 25px;
+            border: 1px solid #d1d1d1;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s ease-in-out;
+        }
+
+        input[type=text]:focus, select:focus {
+            outline: none;
+            border-color: #7c77b9;
+        }
+
+        .gender {
+            display: flex;
+            justify-content: start;
+            margin-bottom: 20px;
+        }
+
+        .gender input {
+            margin-right: 7px;
+        }
+
+        .gender label {
+            margin-top: 12px;
+            margin-right: 30px;
+            font-size: 16px;
+            color: #4a4a4a;
+        }
+
+        button {
+            background-color: #7c77b9;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #6961a5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Форма за пријавување на X-Factor</h2>
+    <form id="form" action="#">
+        <label for="name">Име</label>
+        <input type="text" id="name" name="name">
+
+        <label for="stageName">Уметничко име</label>
+        <input type="text" id="stageName" name="stageName">
+
+        <div class="gender">
+            <input type="radio" id="male" name="gender" value="Машко">
+            <label for="male">Машко</label>
+            <input type="radio" id="female" name="gender" value="Женско">
+            <label for="female">Женско</label>
+        </div>
+
+        <label for="genre">Жанр:</label>
+        <select id="genre" name="genre">
+            <option value="classical">Classical Music</option>
+            <option value="folk">Folk Music</option>
+            <option value="hiphop">Hip Hop Music</option>
+            <option value="pop">Pop Music</option>
+            <option value="rock">Rock Music</option>
+            <option value="metal">Metal Music</option>
+            <option value="pop-folk">Pop-Folk Music</option>
+            <option value="other">Other</option>
+        </select>
+
+        <button type="submit" onclick="formSubmit()">Пријави се</button>
+    </form>
+</div>
+<script>
+
+    function formSubmit() {
+        let form = document.forms['form']
+
+        let name = form['name'].value.trim()
+        let stageName = form['stageName'].value.trim()
+        let gender = form.querySelector('input[name="gender"]:checked')
+        let genreSelect = document.getElementById('genre')
+        let genreText = genreSelect.options[genreSelect.selectedIndex].text
+
+        if (name === "" || stageName === "" || !gender) {
+            alert('Сите полиња се задолжителни')
+            return
+        }
+
+        alert(`${name} ${stageName}, ${gender.value}, ${genreText} - Успешно се пријавивте`)
+    }
+</script>
+</body>
+</html>
