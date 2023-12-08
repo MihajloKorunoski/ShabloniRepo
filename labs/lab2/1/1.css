@@ -1,0 +1,60 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #F4F4F4;
+    color: #333333;
+    margin: 0;
+    padding: 20px;
+}
+
+.tab-container {
+    max-width: 1200px;
+    margin: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.tab {
+    overflow: hidden;
+    background-color: #FFC107;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.tab button {
+    background-color: #FFC107;
+    border: none;
+    border-radius: 0;
+    padding: 15px 30px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.tab button:hover {
+    transform: translateY(-2px);
+}
+
+.tab button.active {
+    background-color: #E0A800;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #00FFFF;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Navigation Pattern: Menu Bar
+    This pattern is appropriate for this hypermarket website as it facilitates easy access to different sections
+    like food-and-drink, electronics, etc., from a single menu bar. It allows users to navigate the site without
+    full page reloads, enhancing the user experience with quick content updates.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <script src="jquery-3.7.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .menu-bar {
+            overflow: hidden;
+            background-color: #333333;
+            font-family: Arial, sans-serif;
+        }
+
+        .menu-bar button {
+            background: none;
+            border: none;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .menu-bar button:hover {
+            background-color: #DDDDDD;
+            color: black;
+        }
+
+        .content {
+            padding: 16px;
+            min-height: 150px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .menu-bar button.active {
+            background-color: #666666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu-bar">
+    <button class="menu-link" data-for="home">Home</button>
+    <button class="menu-link" data-for="food-and-drink">Food & Drink</button>
+    <button class="menu-link" data-for="electronics">Electronics</button>
+    <button class="menu-link" data-for="home-and-garden">Home & Garden</button>
+    <button class="menu-link" data-for="about-us">About Us</button>
+    <button class="menu-link" data-for="contact">Contact</button>
+</div>
+
+<div class="content" id="home">
+    <h1>Welcome to Our Hypermarket</h1>
+    <p>Find everything you need from groceries to electronics all under one roof!</p>
+</div>
+
+<div class="content" id="food-and-drink">
+    <h1>Food & Drink</h1>
+    <p>Quality groceries, fresh fruits, and beverages from all around the world.</p>
+</div>
+
+<div class="content" id="electronics">
+    <h1>Electronics</h1>
+    <p>The latest gadgets and electronics at competitive prices.</p>
+</div>
+
+<div class="content" id="home-and-garden">
+    <h1>Home & Garden</h1>
+    <p>Everything you need for your home and garden.</p>
+</div>
+
+<div class="content" id="about-us">
+    <h1>About Us</h1>
+    <p>Learn more about our values, our history, and our commitment to customers.</p>
+</div>
+
+<div class="content" id="contact">
+    <h1>Contact</h1>
+    <p>Get in touch with us for queries, support, and feedback.</p>
+</div>
+
+<script>
+    $(document).ready(function() {
+        let menuLink = $('.menu-link')
+        function showContent(id) {
+            $('.content').addClass('hidden');
+            $('#' + id).removeClass('hidden');
+        }
+
+        menuLink.click(function() {
+            let contentId = $(this).data('for');
+            showContent(contentId);
+            menuLink.removeClass('active');
+            $(this).addClass('active');
+        });
+
+        menuLink.first().trigger('click');
+    });
+</script>
+
+</body>
+</html>

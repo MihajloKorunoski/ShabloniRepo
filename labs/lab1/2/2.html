@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 2</title>
+    <link href="2.css" rel="stylesheet"/>
+    <script src="2.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Форма за пријавување на X-Factor</h2>
+    <form id="form" action="#">
+        <label for="name">Име</label>
+        <input type="text" id="name" name="name">
+
+        <label for="stageName">Уметничко име</label>
+        <input type="text" id="stageName" name="stageName">
+
+        <div class="gender">
+            <input type="radio" id="male" name="gender" value="Машко">
+            <label for="male">Машко</label>
+            <input type="radio" id="female" name="gender" value="Женско">
+            <label for="female">Женско</label>
+        </div>
+
+        <label for="genre">Жанр:</label>
+        <select id="genre" name="genre">
+            <option value="classical">Classical Music</option>
+            <option value="folk">Folk Music</option>
+            <option value="hiphop">Hip Hop Music</option>
+            <option value="pop">Pop Music</option>
+            <option value="rock">Rock Music</option>
+            <option value="metal">Metal Music</option>
+            <option value="pop-folk">Pop-Folk Music</option>
+            <option value="other">Other</option>
+        </select>
+
+        <button type="submit" onclick="formSubmit()">Пријави се</button>
+    </form>
+</div>
+</body>
+</html>
