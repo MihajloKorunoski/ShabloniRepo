@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #6dd5ed, #2193b0);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .game-board {
+            margin: 0 auto;
+            width: 650px;
+            height: 650px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            padding: 10px;
+        }
+
+        .memory-tile {
+            background: linear-gradient(#1E5799, #7db9e8);
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .memory-tile.flipped, .memory-tile.matched {
+            background: white;
+            font-size: 24px;
+        }
+
+        #reset-game {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #reset-game:hover {
+            background-color: #45a049;
+        }
+
+        #click-counter {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="game-board" class="game-board">
+    <div class="memory-tile" data-match="Lakers"><span></span></div>
+    <div class="memory-tile" data-match="Lakers"><span></span></div>
+    <div class="memory-tile" data-match="Celtics"><span></span></div>
+    <div class="memory-tile" data-match="Celtics"><span></span></div>
+    <div class="memory-tile" data-match="Bulls"><span></span></div>
+    <div class="memory-tile" data-match="Bulls"><span></span></div>
+    <div class="memory-tile" data-match="Heat"><span></span></div>
+    <div class="memory-tile" data-match="Heat"><span></span></div>
+    <div class="memory-tile" data-match="Warriors"><span></span></div>
+    <div class="memory-tile" data-match="Warriors"><span></span></div>
+    <div class="memory-tile" data-match="Nets"><span></span></div>
+    <div class="memory-tile" data-match="Nets"><span></span></div>
+    <div class="memory-tile" data-match="Raptors"><span></span></div>
+    <div class="memory-tile" data-match="Raptors"><span></span></div>
+    <div class="memory-tile" data-match="Spurs"><span></span></div>
+    <div class="memory-tile" data-match="Spurs"><span></span></div>
+</div>
+<button id="reset-game">Reset Game</button>
+<div>Clicks: <span id="click-counter">0</span></div>
+
+<script src="jquery-3.7.1.js"></script>
+<script>
+    $(document).ready(function(){
+        let isFlippedTile = false;
+        let firstTile, secondTile;
+        let matches = 0;
+        let clicks = 0;
+
+        function initializeGame() {
+            const teamNames = ['Lakers', 'Celtics', 'Bulls', 'Heat', 'Warriors', 'Nets', 'Raptors', 'Spurs'];
+            let tiles = [];
+            teamNames.forEach(function(team) {
+                tiles.push({ name: team }, { name: team });
+            });
+            shuffle(tiles);
+
+            $('#game-board').empty();
+            tiles.forEach(function(tile, index) {
+                let borderStyle = (index % 4 === 0 || index % 4 === 2) ? 'black-border' : 'red-border';
+                $('#game-board').append(`<div class="memory-tile ${borderStyle}" data-team="${tile.name}"><span>${tile.name}</span></div>`);
+            });
+
+            setBorders();
+            attachTileClickHandlers();
+            clicks = 0;
+            $('#click-counter').text(clicks);
+        }
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function setBorders() {
+            $('.memory-tile').each(function(index) {
+                if (index % 4 === 0 || index % 4 === 2) {
+                    $(this).css('border', '2px solid black');
+                } else {
+                    $(this).css('border', '2px solid red');
+                }
+            });
+        }
+
+        function attachTileClickHandlers() {
+            $('.memory-tile').off('click').on('click', function(){
+                let $this = $(this);
+                if($this.hasClass('flipped')){
+                    return;
+                }
+
+                $this.addClass('flipped');
+                clicks++;
+                $('#click-counter').text(clicks);
+
+                if(!isFlippedTile) {
+                    isFlippedTile = true;
+                    firstTile = $this;
+                } else {
+                    secondTile = $this;
+                    checkForMatch();
+                }
+            });
+        }
+
+        function checkForMatch() {
+            if (firstTile.data('team') === secondTile.data('team')) {
+                matches++;
+                firstTile = secondTile = null;
+                isFlippedTile = false;
+                if(matches === 8) {
+                    alert('Game over! You found all matches!');
+                }
+            } else {
+                setTimeout(function() {
+                    firstTile.removeClass('flipped');
+                    secondTile.removeClass('flipped');
+                    firstTile = secondTile = null;
+                    isFlippedTile = false;
+                }, 1000);
+            }
+        }
+
+        $('#reset-game').click(function() {
+            initializeGame();
+        });
+
+        initializeGame();
+    });
+
+</script>
+</body>
+</html>

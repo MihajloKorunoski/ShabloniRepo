@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #454545;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tab {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tab button {
+            background-color: #ffffff;
+            color: #5f6368;
+            border: 1px solid #dfe1e5;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab button:hover, .tab button.active {
+            background-color: #4285F4;
+            color: white;
+            border-color: #4285F4;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        @media screen and (max-width: 600px) {
+            .tab {
+                flex-direction: column;
+            }
+
+            .tab button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            let tab_links = $(".tab-links");
+            tab_links.click(function(){
+                let target = $(this).data("target");
+                $(".tab-content").hide();
+                $("#" + target).show();
+                $(".tab-links").removeClass("active");
+                $(this).addClass("active");
+            });
+            tab_links.first().click();
+        });
+    </script>
+</head>
+<body>
+<div class="tab">
+    <button class="tab-links" data-target="medicine">Медицина</button>
+    <button class="tab-links" data-target="education">Образование</button>
+    <button class="tab-links" data-target="accounting">Сметководство</button>
+    <button class="tab-links" data-target="games">Игри</button>
+    <button class="tab-links" data-target="team">Тим</button>
+    <button class="tab-links" data-target="representations">Претставништва</button>
+    <button class="tab-links" data-target="contact">Контакт</button>
+</div>
+
+<div id="medicine" class="tab-content">
+    <h3>Медицина</h3>
+    <p>MedIm</p>
+    <p>MedIA</p>
+    <p>FINKI-Med</p>
+</div>
+
+<div id="education" class="tab-content">
+    <h3>Образование</h3>
+    <p>FINKI-Edu</p>
+    <p>Edu-Buddy</p>
+    <p>FINKI-LE</p>
+    <p>FINKI-Math</p>
+</div>
+
+<div id="accounting" class="tab-content">
+    <h3>Сметководство</h3>
+    <p>eTax</p>
+    <p>FINKI-Tax</p>
+    <p>Tax-All</p>
+    <p>MySalary</p>
+</div>
+
+<div id="games" class="tab-content">
+    <h3>Игри</h3>
+    <p>FINKI-game</p>
+    <p>Grelima</p>
+    <p>Edaolith</p>
+    <p>Foessa</p>
+    <p>Jeroen</p>
+</div>
+
+<div id="team" class="tab-content">
+    <h3>Тим</h3>
+    <p>Алберт Ајнштајн</p>
+    <p>Ален Тјуринг</p>
+    <p>Архимед</p>
+</div>
+
+<div id="representations" class="tab-content">
+    <h3>Претставништва</h3>
+    <p>Скопје</p>
+    <p>Прилеп</p>
+    <p>Велес</p>
+</div>
+
+<div id="contact" class="tab-content">
+    <h3>Контакт</h3>
+    <p>Ул. Есенска 24/5 1000 Скопје</p>
+    <p>+38921234567</p>
+    <p>finkiit@iaispit.com</p>
+</div>
+</body>
+</html>
