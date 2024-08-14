@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectable List</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <style>
+        .green{
+            display: inline-block;
+            background-color: #ccf194;
+            border-top: solid;
+            border-bottom: solid;
+            border-color: black;
+            border-width: 1px;
+        }
+        #selectable .ui-selecting {
+            background: #a4cd29;
+        }
+        #selectable .ui-selected {
+            background: #8baf24;
+            color: white;
+        }
+        #selectable {
+            list-style-type: none;
+            margin: 0; padding: 0;
+            width: 270px;
+        }
+        #selectable li {
+            background: none;
+            margin: 3px;
+            margin-left: 0;
+            padding: 0.3em;
+            height: 18px;
+        }
+    </style>
+
+</head>
+<body>
+<label>New Item:</label>
+<br>
+<br>
+<input id="itemInput">
+<br>
+<br>
+<button onclick="add()">Add New Item</button>
+<button onclick="delet()">Delete Selected Items</button>
+<br>
+<br>
+<div class = "green">Selected Items</div>
+<div id = "selectedItems" class = "green"></div>
+<br>
+<br>
+<ul id="selectable">
+    <li class="ui-widget-content">Item 1</li>
+    <li class="ui-widget-content">Item 2</li>
+    <li class="ui-widget-content">Item 3</li>
+    <li class="ui-widget-content">Item 4</li>
+    <li class="ui-widget-content">Item 5</li>
+</ul>
+<script>
+
+    function add(){
+        let newItem = $("#itemInput").val();
+        if(newItem === ""){
+            return;
+        }
+        $("#itemInput").val("");
+        $("#selectable").append("<li class='ui-widget-content'>" + newItem + "</li>");
+    }
+
+    function delet(){
+        $.each($("#selectable > li"), function (index, object) {
+            if ($(object).hasClass("ui-selected")) {
+                $(object).remove();
+            }
+        });
+        update();
+    }
+
+    function update() {
+        var items = "";
+        $.each($("#selectable > li"), function (index, object) {
+            if ($(object).hasClass("ui-selected")) {
+                items += $(object).html() + " ";
+            }
+        });
+        $("#selectedItems").html(items);
+    }
+
+    $("#selectable").bind("mousedown", function(e) {
+        e.metaKey = true;
+    }).selectable({
+        selected: function( event, ui ) {
+            update();
+        },
+        unselected: function( event, ui ) {
+            update();
+        }
+    });
+</script>
+</body>
+</html>
+

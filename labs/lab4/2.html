@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/start/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label, #date {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#date").datepicker({
+                defaultDate: new Date(),
+                dateFormat: "mm/dd/yy",
+                beforeShowDay: function(date) {
+                    const numOfDays = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+                    const isEvenMonth = numOfDays % 2 === 0;
+                    const isEnabled = isEvenMonth ? date.getDate() % 2 === 0 : date.getDate() % 2 !== 0;
+                    return [isEnabled, ""];
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<label for="date">Date: </label>
+<input id="date" type="text"><br />
+</body>
+</html>
