@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #121212;
+    color: #CCCCCC;
+}
+
+#addBookBtn {
+    padding: 10px 20px;
+    background-color: #5F5F5F;
+    color: white;
+    border: 1px solid #333333;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.2s ease;
+}
+
+#addBookBtn:hover {
+    background-color: #4CAF50;
+}
+
+.book-entry {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #444444;
+    background-color: #222222;
+    color: #DDDDDD;
+    transition: transform 0.2s ease;
+}
+
+.book-entry:hover {
+    transform: scale(1.02);
+}
+
+label {
+    color: #CCCCCC;
+}
+
+input[type="text"],
+textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333333;
+    background-color: #222222;
+    color: #CCCCCC;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #4CAF50;
+}
+
+.ui-dialog .ui-dialog-content {
+    background-color: #121212;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    background-color: #121212;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button {
+    background-color: #333333;
+    border-color: #444444;
+    color: #FFFFFF;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button:hover {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+#bookDialog {
+    display: none;
+}
+
+#addBookForm label {
+    display: block;
+    margin-top: 10px;
+    color: #CCCCCC;
+}
+
+#addBookForm input,
+#addBookForm textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #555555;
+    background: #333333;
+    color: #DDDDDD;
+    box-sizing: border-box;
+}
+
+#addBookForm textarea {
+    height: 100px;
+    resize: vertical;
+}

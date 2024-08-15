@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu-bar {
+    overflow: hidden;
+    background-color: #333333;
+    font-family: Arial, sans-serif;
+}
+
+.menu-bar button {
+    background: none;
+    border: none;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.menu-bar button:hover {
+    background-color: #DDDDDD;
+    color: black;
+}
+
+.content {
+    padding: 16px;
+    min-height: 150px;
+}
+
+.hidden {
+    display: none;
+}
+
+.menu-bar button.active {
+    background-color: #666666;
+}
