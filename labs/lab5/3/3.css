@@ -1,0 +1,31 @@
+.green {
+    display: inline-block;
+    background-color: #ccf194;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#selectable .ui-selecting {
+    background: #a4cd29;
+}
+
+#selectable .ui-selected {
+    background: #8baf24;
+    color: white;
+}
+
+#selectable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 270px;
+}
+
+#selectable li {
+    background: none;
+    margin: 3px 3px 3px 0;
+    padding: 0.3em;
+    height: 18px;
+}

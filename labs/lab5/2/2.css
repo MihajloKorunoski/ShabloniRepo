@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.form-container {
+    margin: 0 auto;
+    text-align: left;
+    max-width: 400px;
+}
+
+.form-row {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 200px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: white;
+}
+
+.ui-datepicker {
+    background-color: #333;
+}
+
+#selectable {
+    list-style-type: none;
+    padding: 0;
+    width: auto;
+}
+
+#selectable li {
+    background: #333;
+    border: 1px solid #555;
+    margin: 3px;
+    padding: 0.4em;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.ui-selected {
+    background: purple;
+    color: white;
+}
+
+button {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5c005c;
+}
+
+.error {
+    color: red;
+    display: none;
+    margin-left: 10px;
+}

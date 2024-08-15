@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.ui-widget {
+    font-size: 14px;
+}
+
+.ui-autocomplete {
+    background: purple;
+    color: white;
+    border: none;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper {
+    background: purple;
+    border-bottom: 1px solid #4b004b;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper:hover {
+    background: #5c005c;
+}
+
+#project {
+    width: 250px;
+    padding: 5px;
+}
+
+#project-description {
+    margin-top: 10px;
+    background: #330033;
+    padding: 10px;
+    border-radius: 5px;
+}

@@ -4,74 +4,10 @@
     <meta charset="UTF-8">
     <title>2</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/dark-hive/jquery-ui.css" />
+    <link rel="stylesheet" href="2.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .form-container {
-            margin: 0 auto;
-            text-align: left;
-            max-width: 400px;
-        }
-        .form-row {
-            margin-bottom: 10px;
-        }
-        label {
-            display: inline-block;
-            width: 120px;
-        }
-        input[type="text"], input[type="password"] {
-            width: 200px;
-            padding: 5px;
-            border-radius: 4px;
-            border: 1px solid #555;
-            background-color: #333;
-            color: white;
-        }
-        .ui-datepicker {
-            background-color: #333;
-        }
-        #selectable {
-            list-style-type: none;
-            padding: 0;
-            width: auto;
-        }
-        #selectable li {
-            background: #333;
-            border: 1px solid #555;
-            margin: 3px;
-            padding: 0.4em;
-            border-radius: 4px;
-            color: white;
-            cursor: pointer;
-        }
-        .ui-selected {
-            background: purple;
-            color: white;
-        }
-        button {
-            background-color: purple;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #5c005c;
-        }
-        .error {
-            color: red;
-            display: none;
-            margin-left: 10px;
-        }
-    </style>
+    <script src="2.js" defer></script>
 </head>
 <body>
 <div class="form-container">
@@ -112,80 +48,5 @@
         <button id="submit">Add my Info</button>
     </div>
 </div>
-
-<script>
-    $(document).ready(function() {
-        $("#birthday").datepicker({
-            changeMonth: true,
-            changeYear: true,
-            yearRange: "1900:2012"
-        });
-
-        $("#selectable").selectable();
-
-        $("#submit").click(function() {
-            validateAndSubmit();
-        });
-    });
-
-    function validateAndSubmit() {
-        const fields = ['#name', '#surname', '#password', '#birthday'];
-        let allValid = true;
-
-        // Validate Fields
-        fields.forEach(field => {
-            if (!validateField(field)) {
-                allValid = false;
-            }
-        });
-
-        // Process Submission if Valid
-        if (allValid) {
-            processSubmission();
-        }
-    }
-
-    function validateField(field) {
-        const value = $(field).val();
-        const isError = value === "";
-        $(`${field}Error`).toggle(isError);
-        styleField(field, isError);
-        return !isError;
-    }
-
-    function styleField(field, isError) {
-        const style = isError ? {"border": "2px solid red"} : {"border": "1px solid darkgrey"};
-        $(field).css(style);
-    }
-
-    function processSubmission() {
-        const hobbies = getSelectedHobbies();
-        const userInfo = {
-            name: $("#name").val(),
-            surname: $("#surname").val(),
-            password: $("#password").val(),
-            birthday: $("#birthday").val(),
-            hobbies: hobbies.join(', ')
-        };
-
-        displayUserInfo(userInfo);
-    }
-
-    function getSelectedHobbies() {
-        return $("#selectable > .ui-selected").map(function() {
-            return $(this).text();
-        }).get();
-    }
-
-    function displayUserInfo(userInfo) {
-        const infoHtml = `Name: ${userInfo.name}<br><br>
-                      Surname: ${userInfo.surname}<br><br>
-                      Password: ${userInfo.password}<br><br>
-                      DateOfBirth: ${userInfo.birthday}<br><br>
-                      Hobbies: ${userInfo.hobbies}`;
-
-        $("#dialog").html(infoHtml).dialog({modal: true});
-    }
-</script>
 </body>
 </html>
