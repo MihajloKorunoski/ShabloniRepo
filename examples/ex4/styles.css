@@ -1,0 +1,25 @@
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.green{
+    color: green;
+}
+
+.numbered{
+    font-weight: bold;
+    font-style: italic;
+    margin-left:5px;
+}
+
+.hidden{
+    display: none;
+}
+
+.highlight{
+    background-color: yellow;
+}
