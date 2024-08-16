@@ -1,0 +1,23 @@
+.red{
+    background-color: red;
+}
+
+.blue{
+    color: blue;
+}
+
+.green{
+    color:green;
+}
+
+.highlight{
+    background-color: yellow;
+}
+
+.hidden{
+    display: none;
+}
+
+.glow{
+    text-shadow: 0 0 8px yellow;
+}
