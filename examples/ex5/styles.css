@@ -1,0 +1,23 @@
+.red {
+    background-color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.bordered {
+    border: 1px solid black;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.hidden {
+    display: none;
+}
