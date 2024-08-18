@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Data Entry Dialog</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="button" id="modal" value="Enter Data" />
+    <div id="data" class="content"></div>
+
+    <div id="dialog" title="Sample Data Entry">
+        <label for="input-data">Enter your name and surname below:</label>
+        <input id="input-data" type="text" placeholder="Name Surname"/>
+        <div id="error-message" class="error"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

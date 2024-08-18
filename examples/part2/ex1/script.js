@@ -29,4 +29,4 @@ $(document).ready(function(){
     $(".content").hover(function (){
         $(this).effect("bounce", { times: 3}, 300);
     });
-})
+});
