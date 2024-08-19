@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #333333;
+}
+
+input {
+    width: 110px;
+    padding: 5px;
+    margin: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+input:hover {
+    background-color: #45A049;
+}
+
+input#search {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.selectable .ui-selecting {
+    background: #FECA40;
+}
+
+.selectable .ui-selected {
+    background: #F39814;
+    color: white;
+}
+
+.selectable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 40%;
+    display: inline-block;
+}
+
+.selectable li {
+    margin: 3px;
+    padding: 0.4em;
+    font-size: 1.4em;
+    height: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.content {
+    width: 300px;
+    background: #eef;
+    padding: 5px;
+    border: 1px gray dotted;
+    font-size: 1.4em;
+    border-radius: 5px;
+}
+
+.button-container {
+    margin-bottom: 10px;
+}
+
+#low-level{
+    margin-top: 20px;
+}
+

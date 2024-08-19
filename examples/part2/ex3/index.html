@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Movie Selector</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="high-level">
+        <h2>Select a Movie</h2>
+        <input id="search" type="text" placeholder="Search movies..."/>
+        <ol class="selectable">
+        </ol>
+    </div>
+
+    <div id="low-level">
+        <div class="button-container">
+            <input id="prev" value="Previous" type="button"/>
+            <input id="top" value="Back To List" type="button"/>
+            <input id="next" value="Next" type="button"/>
+            <input id="random" value="Random Movie" type="button"/>
+        </div>
+        <label for="title">Title:</label>
+        <div id="title" class="content"></div>
+        <label for="desc">Description:</label>
+        <div id="desc" class="content"></div>
+        <label for="rating">Rating:</label>
+        <div id="rating" class="content"></div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
