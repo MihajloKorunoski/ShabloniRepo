@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Form Wizard with Progress and Tooltips</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progressbar"></div>
+
+  <div id="status"></div>
+
+  <form id="example-form" action="#">
+    <div>
+      <h3>Account</h3>
+      <section>
+          <label for="username">Username:</label>
+          <input id="username" name="username" type="text" class="required" title="Enter your username">
+          <label for="password">Password:</label>
+          <input id="password" name="password" type="password" class="required" title="Enter a secure password">
+          <label for="confirm">Confirm Password:</label>
+          <input id="confirm" name="confirm" type="password" class="required" title="Re-enter your password to confirm">
+      </section>
+    </div>
+    <div>
+      <h3>Profile</h3>
+      <section>
+        <label for="name">First name:</label>
+        <input id="name" name="name" type="text" class="required" title="Enter your first name">
+        <label for="surname">Last name:</label>
+        <input id="surname" name="surname" type="text" class="required" title="Enter your last name">
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" class="required" title="Enter your email address">
+        <label for="address">Address:</label>
+        <input id="address" name="address" type="text" title="Enter your address (optional)">
+      </section>
+    </div>
+    <div>
+      <h3>Tips</h3>
+      <section>
+        <ul>
+          <li title="Ensure your password is at least 8 characters long for better security.">Use Strong Passwords</li>
+          <li title="Remember to use a mix of letters, numbers, and symbols in your password.">Mix Characters</li>
+          <li title="Double-check your email address for typos to avoid missing important information.">Check Your Email</li>
+          <li title="Keep your profile information up-to-date to receive personalized content.">Keep Info Updated</li>
+          <li title="Review our Terms and Conditions carefully before proceeding.">Review Terms</li>
+        </ul>
+      </section>
+    </div>
+    <div>
+      <h3>Finish</h3>
+      <section>
+        <span class="terms-container">
+          <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required" title="You must agree with the terms">
+          <label for="acceptTerms">I agree with the <a href="#">Terms and Conditions</a>.</label>
+        </span>
+      </section>
+    </div>
+  </form>
+  <div class="button-container">
+    <input type="button" id="prev" value="Previous">
+    <input type="button" id="next" value="Next">
+  </div>
+
+  <div id="completion-dialog" title="Congratulations!">
+    <p>You have successfully completed the form wizard!</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
