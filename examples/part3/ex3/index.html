@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Menu Sections</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Interactive Menu Sections</h1>
+
+<div class="tab-container">
+    <div class="tab-title" id="options-tab">Options</div>
+    <div class="tab-title" id="methods-tab">Methods</div>
+    <div class="tab-title" id="events-tab">Events</div>
+</div>
+
+<div id="options-content" class="tab-content">
+    <ul class="menu">
+        <li><a href="#">Disabled</a></li>
+        <li><a href="#">Icons</a></li>
+        <li><a href="#">Items</a></li>
+        <li><a href="#">Menus</a></li>
+        <li><a href="#">Position</a></li>
+    </ul>
+</div>
+
+<div id="methods-content" class="tab-content">
+    <ul class="menu">
+        <li><a href="#">Blur</a></li>
+        <li><a href="#">Collapsed</a></li>
+        <li><a href="#">CollapseAll</a></li>
+        <li><a href="#">Destroy</a></li>
+        <li><a href="#">Disable</a></li>
+        <li><a href="#">Previous</a></li>
+        <li><a href="#">Next</a></li>
+        <li><a href="#">Select</a></li>
+    </ul>
+</div>
+
+<div id="events-content" class="tab-content">
+    <ul class="menu">
+        <li><a href="#">Blur</a></li>
+        <li><a href="#">Create</a></li>
+        <li><a href="#">Focus</a></li>
+        <li><a href="#">Select</a></li>
+    </ul>
+</div>
+
+<div id="dialog" title="Welcome!">
+    <p>Select a section to view its content.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
