@@ -1,0 +1,87 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h3 {
+    font-size: 2em;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    gap: 30px;
+    justify-content: center;
+}
+
+.tile {
+    background-color: #ff6f61;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #e55d50;
+}
+
+.tile h2 {
+    margin: 0;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+.tile-label {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tile.active .tile-label {
+    display: block;
+}
+
+.tile.active h2 {
+    display: none;
+}
+
+.ui-dialog-titlebar {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+}
+
+.ui-dialog-titlebar-close {
+    color: white;
+}
+
+.ui-dialog-content {
+    font-size: 1.2em;
+    color: #34495e;
+}
