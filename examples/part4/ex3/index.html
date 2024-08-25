@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JQuery UI Dialogs with Dark Theme</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="action-buttons">
+    <button id="opener">Open Basic Dialog</button>
+    <button id="open-message">Show Message</button>
+    <button id="open-confirm">Open Confirmation</button>
+    <button id="create-user">Create New User</button>
+</div>
+
+<div id="accordion">
+    <h3>Existing Users</h3>
+    <div id="users-contain">
+        <table id="users">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Passwords</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>john.doe@examlemail.com</td>
+                <td>johndoe1</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="dialog" title="Basic dialog">
+    <p>This is a simple dialog box for displaying information. It can be moved, resized, and closed</p>
+</div>
+
+<div id="dialog-message" title="Download complete">
+    <p>
+        <span class="ui-icon ui-icon-circle-check"></span>
+        Your files have been successfully downloaded to the My Downloads folder.
+    </p>
+    <p>
+        You are currently using <b>36% of your storage space</b>
+    </p>
+</div>
+
+<div id="dialog-confirm" title="Empty the recycle bin?">
+    <p>
+        <span class="ui-icon ui-icon-alert icon"></span>
+        This action will permanently delete all items. Are you sure you want to proceed?
+    </p>
+</div>
+
+<div id="dialog-form" title="Create new user">
+    <p class="validateTips">All form fields are required</p>
+    <form>
+        <fieldset>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="text ui-widget-content ui-corner-all">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="text ui-widget-content ui-corner-all">
+            <input type="submit" tabindex="-1" class="hidden-submit">
+        </fieldset>
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
