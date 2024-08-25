@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.social {
+    list-style: none;
+    margin: 30px auto;
+    padding: 0;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social li{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social li:hover{
+    transform: scale(1.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social li a{
+    display: block;
+    width: 64px;
+    height: 64px;
+    text-decoration: none;
+    position: relative;
+}
+
+.social li a strong{
+    font-weight: normal;
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+    color: #ffffff;
+    padding: 5px 10px;
+    z-index: 9999;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease, top 0.3s ease;
+}
+
+.social li:hover a strong{
+    opacity: 1;
+    top: 60px;
+}
+
+li.delicious {
+    background-image: url("delicious.png");
+}
+
+li.digg {
+    background-image: url("digg.png");
+}
+
+li.facebook {
+    background-image: url("facebook.png");
+}
+
+li.flickr {
+    background-image: url("flickr.png");
+}
+
+li.linkedin{
+    background-image: url("linkedin.png");
+}
+
+li.reddit {
+    background-image: url("reddit.png");
+}
+
+li.rss {
+    background-image: url("rss.png");
+}
+
+li.twitter {
+    background-image: url("twitter.png");
+}
