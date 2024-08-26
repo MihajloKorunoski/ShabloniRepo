@@ -1,0 +1,49 @@
+body {
+    font: 100% "Trebuchet MS", Trebuchet, Tahoma, Verdana, Arial, sans-serif;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#wrap {
+    width: 40%;
+    margin: auto;
+}
+
+.slick-slide{
+    margin: 0 5px;
+}
+
+.slick-slide img {
+    border: 5px solid #444;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.slick-prev,
+.slick-next {
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    opacity: 1;
+}
+
+.slick-dots li button:before {
+    color: #e0e0e0;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #ff5722;
+}
