@@ -1,0 +1,40 @@
+body{
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 35vh;
+}
+
+input[type="text"] {
+    background-color: #4c4c4c;
+    color: #ffffff;
+    border: 1px solid #666666;
+    padding: 10px;
+    border-radius: 4px;
+    width: calc(100% - 20px);
+}
+
+input[type="text"]::placeholder {
+    color: #bbbbbb;
+}
+
+.ui-autocomplete-category{
+    font-weight: bold;
+    padding: .2em .4em;
+    margin: .8em 0 .2em;
+    line-height: 1.5;
+    background-color: #333333;
+    color: #ff5722;
+}
